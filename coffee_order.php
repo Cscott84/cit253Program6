@@ -9,6 +9,7 @@
 
 </head>    
 <body class="container">
+    <h1 class="text-center">Bean House Coffee</h1>
 
 <?php
 // error reporting 
@@ -72,29 +73,91 @@ else
 }
 
 
-
-echo $typeCost;
+//check true variable
 
 $formOkay = true;
 
 
-if(empty($name))
+// conditions to check for user input
+
+if(empty($coffee))
 {
-    echo "please enter a name";
+    echo "please select a coffe type br />";
     $formOkay = false;
 }
+
+if (!is_numeric($quantity))
+{
+    echo "Please select a numeric value for quantity <br />";
+    $formOkay = false;
+}
+
+if(empty($name))
+{
+    echo "please enter a name <br />";
+    $formOkay = false;
+}
+
+if(empty($email))
+{
+    echo "Please enter an email address <br />";
+    $formOkay = false;
+}
+
+if(empty($phone))
+{
+    echo "Please enter a phone number <br/>";
+    $formOkay = false;
+}
+
+if(empty($address))
+{
+    echo "Please enter an address <br />";
+    $formOkay = false;
+}
+
+if(empty($city))
+{
+    echo "Please enter a city <br />";
+    $formOkay = false;
+}
+
+if(empty($state))
+{
+    echo "Please enter a state <br />";
+    $formOkay = false;
+}
+if(empty($zip))
+{
+    echo "Please enter a zip code";
+    $formOkay = false;
+}
+
+
 
 
 if($formOkay)
 {
 
-    echo "hello $name $phone";
+   echo "<h2 class=\"text-left\"> Your Order Details:</h2>";
 
+   $info = [$city,$state,$zip];
+   $info = implode(', ',$info);
+   $sucess = ['Name'=> $name,'Adress'=>$address, 'City, State, Zip' => $info, 'Phone #' =>$phone];
+   
+
+   echo "<table class=\"table table-striped border\">";
+   foreach($sucess as $key => $value)
+   {
+       echo"<tr>";
+       echo " <td>$key:</td>  <td>$value</td>";
+       echo "</tr>";
+   }
+
+
+   echo "</table>";
 }
-    else
-    {
-        echo "Warning, you have the following Errors";
-    }
+
 
 
 
