@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--Corey Scott CIT 253 Assignment 6 10/11/2020-->
+<html lang="en">
+
+<head>
+    <title>Corey Scott CIT 253 Assignment 6</title>
+    <meta charset="UTF-8">
+
+    <!--BootStrap-->
+    <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+</head>
+
+<body class="container">
+
+    <table class="table table-striped border text-center font-weight-bold">
+        <caption class="text-center font-weight-bold display-4" style="caption-side: top;">Bean House Coffee Menu </caption>
+        <thead class="thead-dark">
+            <tr>
+                <th>Coffee</th>
+                <th>Price per Pound for Regular Coffee</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Boca Villa</td>
+                <td>$7.99</td>
+            </tr>
+            <tr>
+                <td>South Beach Rhythm</td>
+                <td>$8.99</td>
+            </tr>
+            <tr>
+                <td>Pumpkin Paradise</td>
+                <td>$8.99</td>
+            </tr>
+            <tr>
+                <td>Sumatran Sunset</td>
+                <td>$9.99</td>
+            </tr>
+            <tr>
+                <td>Bali Batur</td>
+                <td>$10.95</td>
+            </tr>
+            <tr>
+                <td>Double Dark</td>
+                <td>$9.95</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="p-3">
+        <h3>*The price of decafinated coffee will cost $1.00 more than the price of regular coffee*</h3>
+    </div>
+
+    <form action="coffee_order.php" method="POST">
+        <table class="table table-striped text-left border font-weight-bold mt-4">
+            <caption class="text-center font-weight-bold display-4" style="caption-side: top;">Place Your Order </caption>
+            <thead></thead>
+            <tbody>
+                <tr>
+                    <td>Coffee:</td>
+                    <td>
+                        <select name="coffee" class="form-control">
+                            <option value="">Choose A Coffee</option>
+                            <option value="bocaVilla">Boca Ville</option>
+                            <option value="southBeachRhythm ">South Beach Rhythm</option>
+                            <option value="pumpkinParadise">Pumpkin Paradise</option>
+                            <option value="sumatranSunset"> Sumatran Sunset</option>
+                            <option value="baliBatur"> Bali Batur</option>
+                            <option value="doubleDark">Double Dark</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Type:</td>
+                    <td> Regular:   <input type="radio" name="type" value="regular"><br /> Decanifated:   <input type="radio" name="type" value="decaf"></td>  
+                </tr>
+                <tr>
+                    <td>Quantity (in pounds):</td>
+                    <td><input type="text" name="quantity" class="form-control" placeholder="Quantity"></td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" class="form-control" placeholder="Name"></td>
+                </tr>
+                <tr>
+                    <td>Email Address:</td>
+                    <td><input type="text" name="email" class="form-control" placeholder="Email Address"></td>
+                </tr>
+                <tr>
+                    <td>Telephone #:</td>
+                    <td><input type="tel" name="phone" class="form-control" placeholder="Phone"></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text" name="address" class="form-control" placeholder="Address"></td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td><input type="text" name="city" class="form-control" placeholder="City"></td>
+                </tr>
+                <tr>
+                    <td>State:</td>
+                    <td><input type="text" name="state" class="form-control" placeholder="State"></td>
+                </tr>
+                <tr>
+                    <td>Zip:</td>
+                    <td><input type="text" name="zip" class="form-control" placeholder="Zip Code"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Place Your Order" class="btn btn-dark"></td>
+                    <td><input type="reset" value="Clear Form" class="btn btn-dark"></td>
+                </tr>
+            </tbody>
+
+
+
+
+
+        </table>
+
+
+
+    </form>
+
+</body>
+
+
+</html>
