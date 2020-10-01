@@ -73,6 +73,7 @@ else
 }
 
 
+
 //check true variable
 
 $formOkay = true;
@@ -82,7 +83,7 @@ $formOkay = true;
 
 if(empty($coffee))
 {
-    echo "please select a coffe type br />";
+    echo "please select a coffe type <br />";
     $formOkay = false;
 }
 
@@ -139,12 +140,17 @@ if(empty($zip))
 if($formOkay)
 {
 
-   echo "<h2 class=\"text-left\"> Your Order Details:</h2>";
+   echo "<h2 class=\"text-left\"> Your Information Summary:</h2>";
 
+   // total variable
+   $total = $quantity * ($price + $typeCost);
+
+   //arrays to hold key and values to be printed
    $info = [$city,$state,$zip];
    $info = implode(', ',$info);
-   $sucess = ['Name'=> $name,'Adress'=>$address, 'City, State, Zip' => $info, 'Phone #' =>$phone];
+   $sucess = ['Name'=> ucwords($name),'Adress'=>ucwords($address), 'City, State, Zip' => ucwords($info), 'Phone #' =>$phone, 'E-Mail'=> $email];
    
+
 
    echo "<table class=\"table table-striped border\">";
    foreach($sucess as $key => $value)
@@ -154,8 +160,27 @@ if($formOkay)
        echo "</tr>";
    }
 
-
+   
+   
    echo "</table>";
+
+   
+
+   echo"<table class=\"table table-striped\">";
+   echo "<caption class=\"text-center font-weight-bold display-4\" style=\"caption-side: top;\">Your Order Details</caption>";
+   echo "<thead>
+            <tr>
+            <th>Coffee</th><th>Type</th><th>Quantity</th><th>Unit Cost</th><th>Total</th>
+            </tr>
+        </thead>";
+    echo "<tbody>
+            <tr>
+            <td>$displayName</td><td>$type</td><td>$quantity lb(s)</td><td>\$$price</td><td>\$$total</td> 
+            </tr>
+            </tbody>
+    ";
+    echo "<tr><td colspan=\"2\"><input class=\"btn btn-dark \" type=\"button\" onclick=\"window.location.href='/school/CIT_253_Assignment6/coffeeshop_input.html';\" value=\"Return to Order Form\" /> </td></tr>";       
+    echo "</table>" ; 
 }
 
 
