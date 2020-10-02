@@ -78,62 +78,13 @@ else
 
 $formOkay = true;
 
+// check to see if any field has no input
 
-// conditions to check for user input
-
-if(empty($coffee))
-{
-    echo "please select a coffe type <br />";
-    $formOkay = false;
-}
-
-if (!is_numeric($quantity))
-{
-    echo "Please select a numeric value for quantity <br />";
-    $formOkay = false;
-}
-
-if(empty($name))
-{
-    echo "please enter a name <br />";
-    $formOkay = false;
-}
-
-if(empty($email))
-{
-    echo "Please enter an email address <br />";
-    $formOkay = false;
-}
-
-if(empty($phone))
-{
-    echo "Please enter a phone number <br/>";
-    $formOkay = false;
-}
-
-if(empty($address))
-{
-    echo "Please enter an address <br />";
-    $formOkay = false;
-}
-
-if(empty($city))
-{
-    echo "Please enter a city <br />";
-    $formOkay = false;
-}
-
-if(empty($state))
-{
-    echo "Please enter a state <br />";
-    $formOkay = false;
-}
-if(empty($zip))
-{
-    echo "Please enter a zip code";
-    $formOkay = false;
-}
-
+if(
+    empty($coffee) || !is_numeric($quantity) || empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($state) || empty($zip))
+    {
+        $formOkay = false;
+    }
 
 
 
@@ -166,7 +117,7 @@ if($formOkay)
 
    
 
-   echo"<table class=\"table table-striped\">";
+   echo"<table class=\"table table-striped border\">";
    echo "<caption class=\"text-center font-weight-bold display-4\" style=\"caption-side: top;\">Your Order Details</caption>";
    echo "<thead>
             <tr>
@@ -176,11 +127,70 @@ if($formOkay)
     echo "<tbody>
             <tr>
             <td>$displayName</td><td>$type</td><td>$quantity lb(s)</td><td>\$$price</td><td>\$$total</td> 
-            </tr>
-            </tbody>
-    ";
-    echo "<tr><td colspan=\"2\"><input class=\"btn btn-dark \" type=\"button\" onclick=\"window.location.href='/school/CIT_253_Assignment6/coffeeshop_input.html';\" value=\"Return to Order Form\" /> </td></tr>";       
-    echo "</table>" ; 
+            </tr>";
+    
+    echo "<tr><td colspan=\"5\"><input class=\"btn btn-dark\" type=\"button\" onclick=\"window.location.href='/school/CIT_253_Assignment6/coffeeshop_input.html';\" value=\"Return to Order Form\" /> </td></tr>";       
+    echo "</tbody></table>" ; 
+}
+
+else
+{
+    echo "<h2 class=\"text-center text-danger display-1 font-weight-bold\"> ERROR! </h2>";
+        if(empty($coffee))
+        {
+            echo "<p class=\"text-center text-danger\">please select a coffe type </p>";
+    
+        }
+
+        if (!is_numeric($quantity))
+        {
+            echo "<p class=\"text-center text-danger\">Please select a numeric value for quantity</p>";
+    
+        }
+
+        if(empty($name))
+        {
+            echo "<p class=\"text-center text-danger\">please enter a name</p>";
+
+        }
+
+        if(empty($email))
+        {
+            echo "<p class=\"text-center text-danger\">Please enter an email address </p>";
+    
+        }
+
+        if(empty($phone))
+        {
+            echo "<p class=\"text-center text-danger\">Please enter a phone number </p>";
+    
+        }
+
+        if(empty($address))
+        {
+            echo "<p class=\"text-center text-danger\">Please enter an address </p>";
+    
+        }
+
+        if(empty($city))
+        {
+            echo "<p class=\"text-center text-danger\">Please enter a city </p>";
+    
+        }
+
+        if(empty($state))
+        {
+            echo "<p class=\"text-center text-danger\">Please enter a state</p>";
+    
+        }
+        if(empty($zip))
+        {
+            echo "<p class=\"text-center text-danger\">Please enter a zip code </p>";
+
+        }
+
+
+ echo "<input class=\"btn btn-danger  \" type=\"button\" onclick=\"window.location.href='/school/CIT_253_Assignment6/coffeeshop_input.html';\" value=\"Return to Order Form\" />";
 }
 
 
