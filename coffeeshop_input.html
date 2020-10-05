@@ -7,9 +7,16 @@
     <meta charset="UTF-8">
 
     <style>
-      
-       
-        
+      body{
+       background-image: url("https://ictcoffee.com/wp-content/uploads/2020/03/great-coffee-bean.jpeg");
+       background-repeat: no-repeat;
+       background-size: cover;
+       text-shadow: 2px 2px black;
+      }
+      #thead{
+          text-shadow: none;
+      }
+
     </style>
 
     <!--BootStrap-->
@@ -21,9 +28,9 @@
 
 <body class="container">
 
-    <table class="table table-striped border text-center font-weight-bold">
-        <caption class="text-center font-weight-bold display-4" style="caption-side: top;">Bean House Coffee Menu </caption>
-        <thead class="thead-dark">
+    <table class="table text-center font-weight-bold shadow text-light mb-4">
+        <caption class="text-center font-weight-bold display-4 text-light" style="caption-side: top;">Bean House Coffee Menu </caption>
+        <thead id="thead" class="thead-light text-dark">
             <tr>
                 <th>Coffee</th>
                 <th>Price per Pound for Regular Coffee</th>
@@ -58,12 +65,12 @@
     </table>
 
     <div class="p-3">
-        <h3>*The price of decafinated coffee will cost $1.00 more than the price of regular coffee*</h3>
+        <h3 class="text-light">*The price of decafinated coffee will cost $1.00 more than the price of regular coffee*</h3>
     </div>
 
     <form action="coffee_order.php" method="POST">
-        <table class="table table-striped text-left border font-weight-bold mt-4">
-            <caption class="text-center font-weight-bold display-4" style="caption-side: top;">Place Your Order </caption>
+        <table class="table text-left  font-weight-bold mt-4 shadow text-light">
+            <caption class="text-center font-weight-bold display-4 text-light" style="caption-side: top;">Place Your Order </caption>
             <thead></thead>
             <tbody>
                 <tr>
@@ -71,7 +78,7 @@
                     <td>
                         <select name="coffee" class="form-control">
                             <option value="">Choose A Coffee</option>
-                            <option value="bocaVilla">Boca Ville</option>
+                            <option value="bocaVilla">Boca Villa</option>
                             <option value="southBeachRhythm">South Beach Rhythm</option>
                             <option value="pumpkinParadise">Pumpkin Paradise</option>
                             <option value="sumatranSunset"> Sumatran Sunset</option>
@@ -117,8 +124,8 @@
                     <td><input type="text" name="zip" class="form-control" placeholder="Zip Code"></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Place Your Order" class="btn btn-dark"></td>
-                    <td><input type="reset" value="Clear Form" class="btn btn-dark"></td>
+                    <td><input type="submit" value="Place Your Order" class="btn btn-light"></td>
+                    <td><input type="reset" value="Clear Form" class="btn btn-light"></td>
                 </tr>
             </tbody>
 

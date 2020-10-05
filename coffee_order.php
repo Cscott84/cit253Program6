@@ -6,12 +6,31 @@
     <!--BootStrap-->
     <!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ 
+<style>
+body{
+       background-image: url("https://ictcoffee.com/wp-content/uploads/2020/03/great-coffee-bean.jpeg");
+       background-repeat: no-repeat;
+       background-size: cover;
+       text-shadow: 2px 2px black;
+      }
+#div1{
+    margin-bottom:4.25em;
+}
+
+#div2{
+    text-shadow:none;
+}      
+
+ </style>   
+
 
 </head>    
 <body class="container">
-    <h1 class="text-center">Bean House Coffee</h1>
+    <h1 class="text-center text-light font-weight-bold display-4">Bean House Coffee</h1>
 
 <?php
+
 // error reporting 
 error_reporting(E_ALL);
 
@@ -63,7 +82,7 @@ break;
 }
 
 //  add dollar to decafinated coffee
-if($type == "decaf")
+if($type == "Decafinated")
 {
     $typeCost = 1.00; 
 }
@@ -91,7 +110,7 @@ if(
 if($formOkay)
 {
 
-   echo "<h2 class=\"text-left\"> Your Information Summary:</h2>";
+   
 
    // total variable
    $total = $quantity * ($price + $typeCost);
@@ -102,8 +121,9 @@ if($formOkay)
    $sucess = ['Name'=> ucwords($name),'Adress'=>ucwords($address), 'City, State, Zip' => ucwords($info), 'Phone #' =>$phone, 'E-Mail'=> $email];
    
 
-
-   echo "<table class=\"table table-striped border\">";
+   echo"<div id=\"div1\">";
+   echo "<table class=\"table font-weight-bold text-light shadow\">";
+   echo "<caption class=\"text-left font-weight-bold display-4 text-light\" style=\"caption-side: top;\">Your Information:</caption>";
    foreach($sucess as $key => $value)
    {
        echo"<tr>";
@@ -114,11 +134,11 @@ if($formOkay)
    
    
    echo "</table>";
-
+   echo "</div>";
    
 
-   echo"<table class=\"table table-striped border\">";
-   echo "<caption class=\"text-center font-weight-bold display-4\" style=\"caption-side: top;\">Your Order Details</caption>";
+   echo"<table class=\"table font-weight-bold shadow text-light\">";
+   echo "<caption class=\"text-left font-weight-bold display-4 text-light pt-4 mt-4\" style=\"caption-side: top;\">Order Details:</caption>";
    echo "<thead>
             <tr>
             <th>Coffee</th><th>Type</th><th>Quantity</th><th>Unit Cost</th><th>Total</th>
@@ -129,71 +149,72 @@ if($formOkay)
             <td>$displayName</td><td>$type</td><td>$quantity lb(s)</td><td>\$$price</td><td>\$$total</td> 
             </tr>";
     
-    echo "<tr><td colspan=\"5\"><input class=\"btn btn-dark\" type=\"button\" onclick=\"window.location.href='/school/CIT_253_Assignment6/coffeeshop_input.html';\" value=\"Return to Order Form\" /> </td></tr>";       
+    echo "<tr><td colspan=\"5\"><input class=\"btn btn-light\" type=\"button\" onclick=\"window.location.href='/school/CIT_253_Assignment6/coffeeshop_input.html';\" value=\"Return to Order Form\" /> </td></tr>";       
     echo "</tbody></table>" ; 
+    
 }
 
 else
 {
+    echo "<div id=\"div2\" class=\"shadow bg-light \">";
     echo "<h2 class=\"text-center text-danger display-1 font-weight-bold\"> ERROR! </h2>";
         if(empty($coffee))
         {
-            echo "<p class=\"text-center text-danger\">please select a coffe type </p>";
+            echo "<p class=\"text-center text-danger font-weight-bold\">Please select a <strong><u>Coffee</u></strong> type </p>";
     
         }
 
         if (!is_numeric($quantity))
         {
-            echo "<p class=\"text-center text-danger\">Please select a numeric value for quantity</p>";
+            echo "<p class=\"text-center text-danger font-weight-bold\">Please select a <strong><u>numeric value</u></strong> for quantity</p>";
     
         }
 
         if(empty($name))
         {
-            echo "<p class=\"text-center text-danger\">please enter a name</p>";
+            echo "<p class=\"text-center text-danger font-weight-bold\">Please enter a <strong><u>name</u></strong></p>";
 
         }
 
         if(empty($email))
         {
-            echo "<p class=\"text-center text-danger\">Please enter an email address </p>";
+            echo "<p class=\"text-center text-danger font-weight-bold\">Please enter an <strong><u>email address</u></strong> </p>";
     
         }
 
         if(empty($phone))
         {
-            echo "<p class=\"text-center text-danger\">Please enter a phone number </p>";
+            echo "<p class=\"text-center text-danger font-weight-bold\">Please enter a <strong><u>phone number</u></strong> </p>";
     
         }
 
         if(empty($address))
         {
-            echo "<p class=\"text-center text-danger\">Please enter an address </p>";
+            echo "<p class=\"text-center text-danger font-weight-bold\">Please enter an <strong><u>address</u></strong> </p>";
     
         }
 
         if(empty($city))
         {
-            echo "<p class=\"text-center text-danger\">Please enter a city </p>";
+            echo "<p class=\"text-center text-danger font-weight-bold\">Please enter a <strong><u>city</u></strong> </p>";
     
         }
 
         if(empty($state))
         {
-            echo "<p class=\"text-center text-danger\">Please enter a state</p>";
+            echo "<p class=\"text-center text-danger font-weight-bold\">Please enter a <strong><u>state</u></strong></p>";
     
         }
         if(empty($zip))
         {
-            echo "<p class=\"text-center text-danger\">Please enter a zip code </p>";
+            echo "<p class=\"text-center text-danger font-weight-bold\">Please enter a <strong><u>zip code</u></strong> </p>";
 
         }
 
 
- echo "<input class=\"btn btn-danger  \" type=\"button\" onclick=\"window.location.href='/school/CIT_253_Assignment6/coffeeshop_input.html';\" value=\"Return to Order Form\" />";
+ echo "<input class=\"btn btn-danger mb-1 ml-1\" type=\"button\" onclick=\"window.location.href='/school/CIT_253_Assignment6/coffeeshop_input.html';\" value=\"Return to Order Form\" />";
+ echo"</div>";       
 }
-
-
 
 
 ?>
